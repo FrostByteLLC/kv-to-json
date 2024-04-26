@@ -1,0 +1,3 @@
+testkey.key1=somevalue
+testkey.key2=someOtherValue
+testkey.key3.subkey=someThirdValue

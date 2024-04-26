@@ -1,0 +1,29 @@
+{
+    "name": "kv-to-json",
+    "version": "1.0.0",
+    "description": "Converts a prop file or key-value string to a structured JSON object",
+    "main": "lib/KVConverter.js",
+    "types": "lib/KVConverter.d.ts",
+    "author": {"name": "FrostByte LLC", "email": "administrator@frostbyte.dev"},
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/FrostByteLLC/kv-to-json"},
+    "keywords": ["key-value", "json", "converter"],
+    "scripts": {
+        "build": "tsc",
+        "test": "jest --coverage"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.24.4",
+        "@babel/preset-env": "^7.24.4",
+        "@babel/preset-typescript": "^7.24.1",
+        "@types/jest": "^29.5.12",
+        "babel-jest": "^29.7.0",
+        "jest": "^29.7.0",
+        "typescript": "^5.4.5"
+    },
+    "dependencies": {
+       
+    }
+}
