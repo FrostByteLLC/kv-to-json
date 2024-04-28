@@ -10,6 +10,7 @@
         "type": "git",
         "url": "https://github.com/FrostByteLLC/kv-to-json"},
     "keywords": ["key-value", "json", "converter"],
+    "entryPoint": "lib/KVConverter.js",
     "scripts": {
         "build": "tsc",
         "test": "jest --coverage"
