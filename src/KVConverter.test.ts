@@ -1,9 +1,9 @@
 import KVConverter from "./KVConverter";
 
 describe('KV Converter', () => {
-    test('Reads a prop file and returns a JSON object', () => {
+    test('Reads a prop file and returns a JSON object', async () => {
         const converter = new KVConverter();
-        const result = converter.convertKVFileToJSON("test.prop");
+        const result = await converter.convertKVFileToJSON("test.prop");
 
         expect(result).toBeTruthy();
         console.log(JSON.stringify(result));
@@ -42,9 +42,9 @@ describe('KV Converter', () => {
         expect(result.testkey.subkey[0]).toBe('someOtherValue');
     });
 
-    test('Throws an error when given an invalid file', () => {
+    test('Throws an error when given an invalid file', async () => {
         const converter = new KVConverter();
-        expect(() => converter.convertKVFileToJSON("invalid.prop")).toThrowError();
+        await expect(converter.convertKVFileToJSON("invalid.prop")).rejects.toThrow();
     });
 
     test('Throws an error when given an invalid string', () => {

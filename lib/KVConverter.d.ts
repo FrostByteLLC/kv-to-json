@@ -85,12 +85,12 @@ declare class KVConverter {
      *
      * @param filename the name of the file containing the key-value pairs
      * @param delimiter the delimiter used in representing structure. Defaults to '.'
-     * @returns a JSON representation of the key-value structure
+     * @returns a Promise that resolves to a JSON representation of the key-value structure
      *
      * @throws Error if the file does not exist
      * @throws Error if the file cannot be read
      * @throws Error if the file is not a valid key-value file
      */
-    convertKVFileToJSON(filename: string, delimiter?: string): any;
+    convertKVFileToJSON(filename: string, delimiter?: string): Promise<any>;
 }
 export default KVConverter;
