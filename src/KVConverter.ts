@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs from 'fs/promises';
 import path from 'path';
 
 
@@ -149,16 +149,17 @@ class KVConverter {
      *  
      * @param filename the name of the file containing the key-value pairs
      * @param delimiter the delimiter used in representing structure. Defaults to '.'
-     * @returns a JSON representation of the key-value structure
+     * @returns a Promise that resolves to a JSON representation of the key-value structure
      * 
      * @throws Error if the file does not exist
      * @throws Error if the file cannot be read
      * @throws Error if the file is not a valid key-value file
      */
-    public convertKVFileToJSON(filename: string, delimiter?: string): any {
+    public async convertKVFileToJSON(filename: string, delimiter?: string): Promise<any> {
 
         const filePath = path.join(process.cwd(), filename);
-        return this.convertKeyValuesToJSON(fs.readFileSync(filePath, "utf8"), delimiter || '.');
+        const fileContent = await fs.readFile(filePath, "utf8");
+        return this.convertKeyValuesToJSON(fileContent, delimiter || '.');
     }
 
 
